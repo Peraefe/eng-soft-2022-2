@@ -2,8 +2,8 @@
 
 use src\controllers\CarrinhoController;
 
-include './views/templates/cabecalho.php';
-include ("controllers/CarrinhoController.php");
+include '../templates/cabecalho.php';
+include ("../../controllers/CarrinhoController.php");
 
 if ($_POST) {
 
@@ -19,6 +19,8 @@ if ($_POST) {
 <html>
 
 	<head>
+
+        <link rel="stylesheet" href="../css/VisualizarCarrinho.css">
 
 		<script>
 
