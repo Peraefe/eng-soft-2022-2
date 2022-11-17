@@ -4,53 +4,32 @@ namespace src\controllers;
 
 use src\models\ProdutoModel;
 
+require_once 'vendor/autoload.php';
+
 /* Camada de Controle que estão presente as regras de negocio referente às entidades, de forma geral, contem funções que manipulam os determinados eventos que devem acontecer na camada de visualização*/
 
 class ProdutoController
 {
-
   /* Função principal quando se trata da listagem dos produtos, ela basicamente instancia um novo objeto modelo e chama funções presentes na camada de Modelo que por sua vez comunica com a camada database */
-
   //View -> Controller -> Modelo -> Data
-
   public static function index()
   {
-    include __DIR__ . '/../models/ProdutoModel.php';
     $model = new ProdutoModel();
     if (!empty($_GET['search'])) {
       $data = $_GET['search'];
-      $model->getByAny($data);
+      $var = $model->getByAny($data);
     } else {
-      $model->getAllRows();
+      $var = $model->getAllRows();
     }
-
-
-    include __DIR__ . '/../views/pages/ListaProdutos.php';
-    // var_dump($model);
+    return $var;
   }
 
   public static function unique()
   {
-    include __DIR__ . '/../models/ProdutoModel.php';
     $model = new ProdutoModel();
-
     if (isset($_GET['id_produto']))
-      $model = $model->getById((int) $_GET['id_produto']);
+      $var = $model->getById((int) $_GET['id_produto']);
 
-    include __DIR__ . '/../views/pages/Produto.php';
-    // var_dump($model);
+    return $var;
   }
-
-
-  //APAGAR NO LANÇAMENTO DA RELEASE
-  // public static function unique()
-  // {
-  //   include 'models/ProdutoModel.php';
-  //   $model = new ProdutoModel();
-  //   $model->getProduct();
-
-
-  //   include 'views/pages/Produto.php';
-  //   var_dump($model);
-  // }
 }

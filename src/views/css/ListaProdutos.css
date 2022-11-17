@@ -1,78 +1,99 @@
-* {
+/*
+
+Paleta
+
+#02031a - quase preto
+#021b2b - azul escuro
+#b10c43 - vermelho fosco
+#ff0841 - vermelho claro
+#ebdfcc - beige
+
+*/
+
+body {
+<<<<<<< HEAD
+=======
+    
+    background-color: #021b2b;
+>>>>>>> ceced9e6498f0bb61cf8cc6d09054d89d06b2f30
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-.global {
-    background-color: #4C586B;
+    background-color: #021b2b;
 }
 
 .container {
 
     text-align: center;
-    background-color: #4C586B;
+    background-color: #021b2b;
     padding: 20px;
 }
 
 .prodGrid {
-
     display: grid;
-    gap: 50px 50px;
+    grid-gap: 50px 50px;
     grid-template-columns: auto auto auto;
     margin-top: -80px;
     padding: 120px;
 }
 
 .gridItem {
-    margin:auto auto;
-    width: 500px;
-    padding: 60px;
+    margin:auto auto auto;
+    width: 300px;
+    height:325px;
+    padding: 20px;
     font-size: 20px;
     text-align: center;
-    color: white;
-    border: 2px solid;
-    border-radius: 70px;
-    background-color: #96a2b6;
+	color: #ebdfcc;
+	border: 2px #ff0841 solid;
+    border-radius: 40px;
+	background-color: #b10c43;
+    margin-left: -12px;
 }
 
-.box-search {
-    background-color: #4C586B;
-
+.image {
+	
+	width : 200px;
+	
 }
 
 .box-search #pesquisar {
+    
+	background : none;
     font-size: 25px;
-    border: 1px solid;
+	color : #ebdfcc;
+	border: 2px #ff0841 solid;
     border-radius: 2px;
+	padding : 4px;
     width: 500px;
     height: 30px;
     outline: 0;
 }
 
 .box-search #but {
-    font-size: 24px;
-    border: 1px solid;
-    border-radius: 2px;
-    width: 120px;
-    height: 30px;
-    opacity: 1;
-    cursor: pointer;
+	background : none;
+	color: #ebdfcc;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 14px 2px;
+	cursor: pointer;
+	border: 2px solid #ff0841;
+	border-radius: 4px;
+	transition : 0.2s;
 }
 
 .box-search #but:hover {
-    font-size: 24px;
-    border: 1px solid;
-    border-radius: 2px;
-    width: 120px;
-    height: 30px;
-    opacity: 0.5;
-    cursor: pointer;
+	background : #ff0841;
+	padding : 15px 45px;
+	transition : 0.2s;
 }
 
 .button a{
 	background : none;
-    color: white;
+	color: #ebdfcc;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -80,15 +101,20 @@
     font-size: 16px;
     margin: 14px 2px;
     cursor: pointer;
-    border: 2px solid white;
+	border: 2px solid #021b2b;
     border-radius: 4px;
 	transition : 0.2s;
 }
 
 .button a:hover {
 	
-	background : #4C586B;
+	background : #021b2b;
 	padding : 15px 45px;
-	color : #ffffff;
+	color : #ff0841;
 	transition : 0.2s;
+}
+
+.results {
+    color: white;
+    font-size: 20px;
 }

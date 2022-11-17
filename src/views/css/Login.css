@@ -1,0 +1,155 @@
+/*
+Paleta
+#02031a - quase preto
+#021b2b - azul escuro
+#b10c43 - vermelho fosco
+#ff0841 - vermelho claro
+#ebdfcc - beige
+*/
+
+* {
+	
+	background : #02031a;
+	
+}
+
+img {
+	
+	background : #ff0841;
+	border-radius : 140px;
+	margin : 0 auto;
+	margin-top : 40px;
+	
+}
+
+form {
+
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	margin-top : 40px;
+
+}
+
+div {
+	
+	width : 25%;
+	height : 80%;
+	border : 2px #ff0841 solid;
+	border-radius : 50px;
+	margin : 0 auto;
+	display : flex;
+	flex-direction : column;
+	align-content : center;
+	margin-top : 30px;
+	
+}
+
+input {
+
+	width : 75%;
+	height : 40px;
+	color: #ebdfcc;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 14px 2px;
+	margin : 0 auto;
+	margin-top : 15px;
+	cursor: pointer;
+	border: 2px solid #ff0841;
+	border-radius: 4px;
+	transition : 0.2s;
+	
+}
+
+input:hover {
+
+	width: 80%;
+
+}
+
+input:focus {
+	
+	width: 80%;
+
+}
+
+
+.button{
+	
+	background: none;
+	color: #ebdfcc;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 14px 2px;
+	margin : 0 auto;
+	margin-top : 35px;
+	cursor: pointer;
+	border: 2px solid #ff0841;
+	border-radius: 4px;
+	transition: 0.2s;
+	
+}
+
+.button:hover {
+
+	background: #ff0841;
+	padding: 15px 45px;
+	color: #021b2b;
+	transition: 0.2s;
+}
+
+.redirect {
+	
+	color: #ff0841;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin : 0 auto;
+	margin-top : 5px;
+	cursor: pointer;
+	transition: 0.2s;
+	
+}
+
+.redirect:hover {
+	
+	border-bottom : 2px solid #ff0841;
+	transition : 0.2s;
+	
+}
+
+/* The Modal (background) */
+.modal {
+	display:flex;
+	position:fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 50%;
+  	top: 30%;
+  	transform: translate(-50%, -50%);
+  	width : 23%;
+	height: 20%; /* Full height */
+	
+	
+  }
+  
+  /* Modal Content */
+  .modal-content {
+	background-color: #02031a;
+	margin: auto;
+	border-radius: 300px;
+	width: 70%;
+	color: white;
+	text-align: center;
+	border: #ff0841;
+  }
+  
+  /* The Close Button */
+  .close {
+	position: absolute;
+  }
