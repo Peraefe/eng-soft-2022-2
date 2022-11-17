@@ -1,12 +1,11 @@
 <?php
-
 // É dado um nome para o documento CarrinhoController.php . Esse nome é o que nós iremos nos referir no use src\ .
-
 namespace src\controllers;
 
 use src\models\CarrinhoModel;
 
-include __DIR__ . '/../models/CarrinhoModel.php';
+
+require_once 'vendor/autoload.php';
 
 class CarrinhoController
 {
@@ -14,15 +13,12 @@ class CarrinhoController
 
     public function updateValue()
     {
-
         // Aqui é onde conseguiremos o id do produto que deve ser incrementado. Já que o id dele está na url, verificamos 
         // primeiramente se ele realmente está lá, e se estiver criamos o objeto model e mandamos ele executar a função 
         // execute que está na classe CarrinhoModel, passando o id do produto que está na url usando o get.
-
         if (isset($_GET['id_produto'])) {
 
             $model = new CarrinhoModel();
-
             $model = $model->execute($_GET['id_produto']);
         }
     }
@@ -32,7 +28,7 @@ class CarrinhoController
         $model = new CarrinhoModel();
         $response = $model->findOne($userId, $productId);
         if (!$response) {
-            return "Product is not in cart";
+            return null;
         }
         return $response;
     }
@@ -44,18 +40,20 @@ class CarrinhoController
         return "Product deleted with success";
     }
 
-    public function removeSomeProducts($quantity, $userId, $productId)
+    public function removeSomeProducts($userId, $productId, $quantity)
     {
+        $model = new CarrinhoModel();
         $productExists = $this->productExists($userId, $productId);
         if (!$productExists) {
-            return $productExists;
+            return null;
+        }
+        $quantityToSave = $productExists["quantidade_item_carrinho"] + $quantity;
+        if ($quantityToSave < 1) {
+            $model->deleteOne($userId, $productId);
+            return;
         }
 
-        if (!$productExists["quantidade_item_carrinho"] >= $quantity) {
-            return "Could not remove product quantity";
-        }
-        $model = new CarrinhoModel();
-        $model->update($quantity, $userId, $productId);
+        $model->update($userId, $productId, $quantityToSave);
     }
 
     public function selecionaCarrinho()
@@ -64,6 +62,7 @@ class CarrinhoController
         $response = $model->selecionaCarrinho();
         return $response;
     }
+
     
 	public function showPrice () {
 		
@@ -83,5 +82,6 @@ class CarrinhoController
 		$classModel -> selecionaCarrinho ();
 		require_once ("../views/pages/VisualizarCarrinho.php");
 	}
+
 }
 ?>
