@@ -1,5 +1,4 @@
 <?php
-
 // A view faz um pedido para o controller, o controller faz um pedido para a model, a model faz o pedido para 
 //a data e a data executa a query.
 
@@ -14,9 +13,9 @@ use PDO;
 
 require_once 'vendor/autoload.php';
 
-class UsuarioData {
-	
-	public function login ($name, $password) {
+class UsuarioData{
+
+    public function login ($name, $password) {
 		
 		// Seleciona o usuário no banco de acordo com o que ele digitou no login, e devolve o resultado para a model.
 		
@@ -29,7 +28,14 @@ class UsuarioData {
 		return $con;
 		
 	}
-	
+
+    public function cadastro($nome_usuario, $cpf_usuario){
+        $con=Connection::getConn();
+        $sql = "INSERT INTO usuario(nome_usuario,cpf_usuario) 
+            VALUES ('$nome_usuario','$cpf_usuario')";
+        $result = $con->query($sql);
+    }
+
 }
 
 ?>

@@ -3,8 +3,10 @@
 namespace src\controllers;
 
 use src\models\UserModel;
+use PDO;
 
 require_once 'vendor/autoload.php';
+
 
 class UserController {
 	
@@ -18,6 +20,15 @@ class UserController {
 		
 		return $user;
 	}
-	
+    
+    public function cadastro_user($nome_usuario, $cpf_usuario){
+               
+        $cadastro=new UserModel();
+        $cadastro->cadastro_usuario($nome_usuario, $cpf_usuario);
+          
+        
+    }
+    
 	
 }
+

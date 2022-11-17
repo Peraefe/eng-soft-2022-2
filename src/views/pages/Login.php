@@ -89,7 +89,7 @@ if ($_POST) {
 				<input class = "button" type = "submit" value = "Login">
 				
 				<button class = "redirect" onclick = "window.location = '#'"> esqueci minha senha </button>
-				<button class = "redirect" onclick = "window.location = '#'"> não sou cadastrado </button>
+				<button class = "redirect" onclick = "window.location = 'Cadastro.php'"> não sou cadastrado </button>
 		
 			</form>
 		

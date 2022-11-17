@@ -17,6 +17,7 @@ class Router
   const PRODUTO = 'produto';
   const CARRINHO = 'carrinho';
   const USUARIO = 'usuario';
+  const CADASTRO = 'cadastro';
 
   public function __construct($url, $payload, $method)
   {
@@ -46,6 +47,10 @@ class Router
       case self::USUARIO:
         $instancia = new UsuarioRoute ($this->method, $this->payload, $this->query);
         $instancia->usuarioRouting();
+        break;
+      case self::CADASTRO:
+        $instancia = new UsuarioRoute ($this->method, $this->payload, $this->query);
+        $instancia->usuarioRouting_cadastro();
         break;
     }
   }
